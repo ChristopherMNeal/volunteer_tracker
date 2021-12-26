@@ -9,7 +9,7 @@ class Project
   end
 
   def self.all
-    returned_classes = DB.exec("SELECT * FROM projects;")
+    returned_projects = DB.exec("SELECT * FROM projects;")
     projects = []
     returned_projects.each do |project|
       title = project.fetch("title")
