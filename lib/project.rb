@@ -1,10 +1,10 @@
 require('pry')
 
 class Project
-  attr_accessor :id, :name
-  
+  attr_accessor :id, :title
+
   def initialize(attributes)
-    @name = attributes.fetch(:name)
+    @title = attributes.fetch(:title)
     @id = attributes.fetch(:id)
   end
 end
