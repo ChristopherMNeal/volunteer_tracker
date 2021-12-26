@@ -1,7 +1,7 @@
 require('pry')
 
 class Project
-  attr_accessor :id, :title
+  attr_reader :id, :title
 
   def initialize(attributes)
     @title = attributes.fetch(:title)
@@ -47,7 +47,11 @@ class Project
     volunteers
   end
 
-
+  def update(attributes)
+    @title = attributes.fetch(:title)
+    @id = attributes.fetch(:id).to_i
+    DB.exec("UPDATE projects SET title = '#{@title}' WHERE id = #{@id};")
+  end
 
 
 
