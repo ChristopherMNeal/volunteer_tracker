@@ -5,6 +5,9 @@ require('spec_helper')
 Capybara.app = Sinatra::Application
 set(:show_exceptions, false)
 
+# NOTE TO EPICODUS TEACHERS: This connect line is here because I also had the problem with the integration test deleting my main database. ¯\_(ツ)_/¯
+DB = PG.connect({:dbname => 'volunteer_tracker_test'})
+
 # Your project should be set up so that a volunteer can only be created if a project already exists. (This makes it easier to assign the one to many relationship in Sinatra.) Focus on getting one integration spec passing at a time.
 
 # The user should be able to visit the home page and fill out a form to add a new project. When that project is created, the application should direct them back to the homepage.
@@ -20,18 +23,18 @@ end
 
 # # A user should be able to click on a project to see its detail. The detail page includes a form where the project can be updated. When the form is submitted, the user can be directed to either the home page or that project's detail page. (The test will work for either.)
 
-# describe 'the project update path', {:type => :feature} do
-#   it 'allows a user to change the name of the project' do
-#     test_project = Project.new({:title => 'Teaching Kids to Code', :id => nil})
-#     test_project.save
-#     visit '/'
-#     click_link('Teaching Kids to Code')
-#     click_link('Edit Project')
-#     fill_in('title', :with => 'Teaching Ruby to Kids')
-#     click_button('Update Project')
-#     expect(page).to have_content('Teaching Ruby to Kids')
-#   end
-# end
+describe 'the project update path', {:type => :feature} do
+  it 'allows a user to change the name of the project' do
+    test_project = Project.new({:title => 'Teaching Kids to Code', :id => nil})
+    test_project.save
+    visit '/'
+    click_link('Teaching Kids to Code')
+    click_link('Edit Project')
+    fill_in('title', :with => 'Teaching Ruby to Kids')
+    click_button('Update Project')
+    expect(page).to have_content('Teaching Ruby to Kids')
+  end
+end
 
 # # A user should be able to nagivate to a project's detail page and delete the project. The user will then be directed to the index page. The project should no longer be on the list of projects.
 
