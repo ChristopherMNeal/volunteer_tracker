@@ -8,5 +8,11 @@ class Volunteer
     @id = attributes.fetch(:id)
   end
 
-  
+  def self.all
+    returned_
+  end
+
+  def save
+
+  end
 end
