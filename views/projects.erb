@@ -5,9 +5,18 @@
 <% if @projects.any? %>
   <ul>
     <% @projects.each do |each_project| %>
-      <li><a href="/projects/<%= each_project.id %>"><%= each_project.name %></a></li>
+      <li><a href="/projects/<%= each_project.id %>"><%= each_project.title %></a></li>
     <% end %>
   </ul>
 <% else %>
   <p>There are currently no projects to display.</p>
 <% end %>
+
+<h3>Add a new project</h3>
+<form action="/projects" method="post">
+  <div class="form-group">
+    <label for="title">New Project Title:</label>
+    <input id="n" name="title" class="form-control" type="text">
+  </div>
+  <button type="submit" class="btn">Create Project</button>
+</form>

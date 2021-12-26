@@ -16,3 +16,11 @@ get('/projects') do
   @projects = Project.all
   erb(:projects)
 end
+
+post('/projects') do
+  title = params[:title]
+  project = Project.new({:title => title, :id => nil})
+  project.save
+  redirect to('/projects')
+end
+
