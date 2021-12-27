@@ -90,5 +90,14 @@ describe Project do
       project.delete
       expect(Project.all).to eq []
     end
+
+    it("deletes all volunteers belonging to a deleted project") do
+      project = Project.new({:title => "Cleaning Up Trash", :id => nil})
+      project.save()
+      volunteer = Volunteer.new({:name => "Jerry", :project_id => project.id, :id => nil})
+      volunteer.save()
+      project.delete()
+      expect(Volunteer.find(volunteer.id)).to(eq(nil))
+    end
   end
 end
