@@ -27,9 +27,9 @@ _This project was created for Epicodus bootcamp to show proficiency in  using a 
 * Clone the GitHub [repository](https://github.com/christophermneal/volunteer_tracker) or download and open the Zip on your local machine.
 * From the main project directory, enter `bundle install` in the terminal to populate gems.
 * To create a database, type in your terminal:  
-      `createdb [DATABASE NAME]`  
-      `psql [DATABASE_NAME] < database_backup.sql`  
-      `createdb -T [DATABASE_NAME] [TEST_DATABASE_NAME]`
+      `createdb volunteer_tracker`  
+      `psql volunteer_tracker < database_backup.sql`  
+      `createdb -T volunteer_tracker volunteer_tracker_test`
 * After building the database, enter `rspec` into the terminal to confirm passing of all tests.
 * Enter `ruby app.rb` to run the program with Sinatra.
 * Open browswer and enter the url "http://localhost:4567/" unless otherwise prompted in the terminal.

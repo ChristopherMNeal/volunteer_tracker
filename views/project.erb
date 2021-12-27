@@ -1,6 +1,6 @@
-<h2><%= @project.title %> Project</h2>
+<h2>'<%= @project.title %>' Project</h2>
 
-<h3>Project Volunteers</h3>
+<h3>Volunteers</h3>
 
   <% if @project.volunteers.any? %>
     <ul>
@@ -12,15 +12,15 @@
     <p>There are no volunteers listed for this project yet.</p>
   <% end %>
 
-<h4>Add a volunteer:</h4>
+<h4>Add a Volunteer</h4>
 
 <form action="/projects/<%= @project.id %>/volunteers" method="post">
   <div class="form-group">
-    <label for="volunteer_name">Volunteer</label>
+    <label for="volunteer_name">New volunteer name:</label>
     <input id="volunteer_name" name="volunteer_name" class="form-control" type="text">
   </div>
   <button type="submit" class="btn">Add volunteer</button>
 </form>
-
+<br>
 <p><a href="/projects/<%= @project.id %>/edit">Edit Project</a></p>
-<p><a href="/projects">Return to project list</a></p>
+<p><a href="/projects">Back to project list</a></p>

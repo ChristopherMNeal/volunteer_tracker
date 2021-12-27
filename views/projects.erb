@@ -1,6 +1,6 @@
-<h1>The Project List</h1>
+<h1>Volunteer Tracker</h1>
 
-<h3>Projects</h3>
+<h3>Projects:</h3>
 
 <% if @projects.any? %>
   <ul>
@@ -15,7 +15,7 @@
 <h3>Add a new project</h3>
 <form action="/projects" method="post">
   <div class="form-group">
-    <label for="title">New Project Title:</label>
+    <label for="title">New project title:</label>
     <input id="n" name="title" class="form-control" type="text">
   </div>
   <button type="submit" class="btn">Create Project</button>
