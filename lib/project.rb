@@ -30,9 +30,13 @@ class Project
 
   def self.find(id)
     project = DB.exec("SELECT * FROM projects WHERE id = #{id};").first
-    title = project.fetch("title")
-    id = project.fetch("id").to_i
-    Project.new({:title => title, :id => id})
+    if project
+      title = project.fetch("title")
+      id = project.fetch("id").to_i
+      Project.new({:title => title, :id => id})
+    else
+      nil
+    end
   end
 
   def volunteers
@@ -57,6 +61,4 @@ class Project
     DB.exec("DELETE FROM projects WHERE id = #{@id};")
     DB.exec("DELETE FROM volunteers WHERE project_id = #{@id};")
   end
-
-
 end
