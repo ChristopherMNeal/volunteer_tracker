@@ -66,3 +66,10 @@ describe 'the volunteer detail page path', {:type => :feature} do
     expect(page).to have_content('Jane')
   end
 end
+
+describe 'error handling when a volunteer does not exist', {:type => :feature} do
+  it "shows an error when a volunteer does not exist" do
+    visit "/projects/999999999999999999"
+    expect(page).to have_content("The project you seek doesn't exist.")
+  end
+end
