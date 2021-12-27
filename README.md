@@ -22,6 +22,9 @@
 
 _This project was created for Epicodus bootcamp to show proficiency in  using a SQL database and routing in Ruby using Sinatra. The user can add volunteer projects and their volunteers to the site._
 
+## Database Schema
+![image_of_database_schema](./public/volunteer_tracker_db_schema.png)
+
 ## Setup/Installation Requirements
 
 * Clone the GitHub [repository](https://github.com/christophermneal/volunteer_tracker) or download and open the Zip on your local machine.
@@ -38,9 +41,6 @@ _This project was created for Epicodus bootcamp to show proficiency in  using a 
 
 _None at this time_
 
-## Future Updates
-
-* __
 
 ## License
 
@@ -48,4 +48,4 @@ _[MIT](https://opensource.org/licenses/MIT)_
 Copyright (c) _26 December 2021_ _Christopher Neal_
 
 ## Support and Contact Details
-* _[christopher.m.neal@gmail.com](mailto:christopher.m.neal@gmail.com)_
+_[christopher.m.neal@gmail.com](mailto:christopher.m.neal@gmail.com)_
