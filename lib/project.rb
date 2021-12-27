@@ -12,6 +12,7 @@ class Project
     returned_projects = DB.exec("SELECT * FROM projects;")
     projects = []
     returned_projects.each do |project|
+      binding.pry
       title = project.fetch("title")
       id = project.fetch("id").to_i
       projects.push(Project.new({:title => title, :id => id}))
@@ -26,6 +27,17 @@ class Project
 
   def ==(project_to_compare)
     self.title() == project_to_compare.title()
+  end
+
+  def self.search(title_searched)
+    arr_results = []
+    projects = DB.exec("SELECT * FROM projects;")
+    projects.values.each do |project|
+      if project[1] == title_searched
+        arr_results.push(project)
+      end
+    end
+    arr_results
   end
 
   def self.find(id)

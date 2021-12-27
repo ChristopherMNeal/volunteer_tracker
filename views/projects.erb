@@ -14,9 +14,25 @@
 
 <h3>Add a new project</h3>
 <form action="/projects" method="post">
-  <div class="form-group">
-    <label for="title">New project title:</label>
-    <input id="n" name="title" class="form-control" type="text">
-  </div>
+  <label for="title">New project title:</label>
+  <input id="n" name="title" class="form-control" type="text">
   <button type="submit" class="btn">Create Project</button>
 </form>
+
+<form action="/projects">
+  <label for="search">Search</label>
+  <input id="search" name="search" class="form-control" type="text">
+  <button type="submit" class="btn">Search</button>
+</form>
+
+<% array = Project.search(params[:search]) %>
+<% if array.any? %>
+  <p>Your search yielded the following results:</p>
+  <ul>
+    <% array.each do |project| %>
+      <li><a href="/projects/<%= project.id %>"><%= project.title %></a></li>
+    <% end %>
+  </ul>
+<% else %>
+  <p>No projects matched your search.</p>
+<% end %>
