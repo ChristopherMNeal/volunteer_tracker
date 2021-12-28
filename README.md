@@ -1,8 +1,9 @@
 # _Volunteer Tracker_
 
-#### Created By _**Christopher Neal**_
+#### _Ruby week 3 Database Basics Code Review project for Epicodus_
 
-#### _An application to track volunteers on a project_
+#### Created By: **Christopher Neal**
+
 
 ## Technologies Used
 
@@ -20,14 +21,21 @@
 
 ## Description
 
-_This project was created for Epicodus bootcamp to show proficiency in  using a SQL database and routing in Ruby using Sinatra. The user can add volunteer projects and their volunteers to the site._
+_This project was created for Epicodus bootcamp to show proficiency in  using a SQL database and routing in Ruby using Sinatra. The user can add projects and volunteers to the site._
 
 ## Database Schema
+
 ![image_of_database_schema](./public/volunteer_tracker_db_schema.png)
+
+## System Requirements
+
+* Ruby v2.6.5 recommended
+* Postgres 12.9  
+_(Note: Ruby gem dependencies will be installed automatically by Bundler.)_
 
 ## Setup/Installation Requirements
 
-* Clone the GitHub [repository](https://github.com/christophermneal/volunteer_tracker) or download and open the Zip on your local machine.
+* Clone the GitHub repository: [https://github.com/christophermneal/volunteer_tracker](https://github.com/christophermneal/volunteer_tracker)
 * From the main project directory, enter `bundle install` in the terminal to populate gems.
 * To create a database, type in your terminal:  
       `createdb volunteer_tracker`  
@@ -35,7 +43,7 @@ _This project was created for Epicodus bootcamp to show proficiency in  using a 
       `createdb -T volunteer_tracker volunteer_tracker_test`
 * After building the database, enter `rspec` into the terminal to confirm passing of all tests.
 * Enter `ruby app.rb` to run the program with Sinatra.
-* Open browswer and enter the url "http://localhost:4567/" unless otherwise prompted in the terminal.
+* Open browswer and enter the url http://localhost:4567/ unless otherwise prompted in the terminal.
 
 ## Known Bugs
 
